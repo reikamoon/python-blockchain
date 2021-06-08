@@ -1,12 +1,11 @@
 from Flask import flask
+from blockchain import *
 
 # Creating the app node
 app = Flask(__name__)
-
 node_identifier = str(uuid4()).replace('-','')
 
 # Initializing blockchain
-
 blockchain = Blockchain()
 
 @app.route('/mine', methods=['GET'])
@@ -54,5 +53,4 @@ def full_chain():
 
 
 if __name__ == '__main__':
-
    app.run(host="0.0.0.0", port=5000)
